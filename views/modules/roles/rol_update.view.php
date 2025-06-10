@@ -7,6 +7,7 @@
 </head>
 <body>
   <h1>Panel de Control</h1>
+  <a href="?c=Dashboard">Inicio</a>
   <h3>Actualizar Rol</h3>
   <form action="" method="POST">
     <div>    
@@ -17,7 +18,7 @@
       <input type="text" name="rol_name">
     </div>
     <div>
-      <a href="?">Cancelar</a>
+      <a href="?c=Dashboard">Cancelar</a>
       <input type="submit" value="Actualizar">
     </div>
   </form>

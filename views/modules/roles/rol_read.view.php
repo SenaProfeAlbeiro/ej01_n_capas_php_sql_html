@@ -9,6 +9,8 @@
   <h1>Panel de Control</h1>
   <a href="?c=Dashboard">Inicio</a>
   <h3>Consultar Roles</h3>  
+  <a href="?c=Users&a=createRol">Registrar Rol</a>
+  <br><br>
   <table border="1">    
     <thead>
       <th>CÓDIGO</th>
@@ -20,8 +22,8 @@
         <td>1</td>
         <td>admin</td>
         <td>
-          <a href="">Actualizar</a>
-          <a href="">Eliminar</a>
+          <a href="?c=Users&a=updateRol">Actualizar</a>
+          <a href="?c=Users&a=deleteRol">Eliminar</a>
         </td>
       </tr>
     </tbody>

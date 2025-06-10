@@ -2,7 +2,6 @@
   require_once "models/Rol.php";
   class Users {
     public function main(){}
-
     public function createRol(){
       if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         require_once "views/modules/roles/rol_create.view.php";
@@ -14,12 +13,10 @@
         );
         print_r($rol);
       }
-    }
-    
+    }    
     public function readRoles(){
       require_once "views/modules/roles/rol_read.view.php";
-    }
-    
+    }    
     public function updateRol(){
       if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         require_once "views/modules/roles/rol_update.view.php";
@@ -31,6 +28,9 @@
         );
         print_r($rol);
       }      
+    }
+    public function deleteRol(){
+      header("Location: ?c=Users&a=readRoles");
     }
   }
 ?>

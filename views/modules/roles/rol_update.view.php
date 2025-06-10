@@ -14,7 +14,7 @@
       <input type="hidden" name="rol_code" value="1">
     </div>
     <div>
-      <label for="">Nombre Rol</label>
+      <label for="">Nombre</label>
       <input type="text" name="rol_name">
     </div>
     <div>

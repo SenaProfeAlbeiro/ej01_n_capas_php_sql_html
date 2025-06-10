@@ -11,7 +11,7 @@
   <h3>Registrar Rol</h3>
   <form action="" method="POST">
     <div>
-      <label for="">Nombre Rol</label>
+      <label for="">Nombre</label>
       <input type="text" name="rol_name">
     </div>
     <div>

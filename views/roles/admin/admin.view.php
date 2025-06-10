@@ -12,10 +12,10 @@
     <div>
       <h3>Roles</h3>
       <div>
-        <a href="?c=Users&a=createRol">Registrar Rol</a>
+        <a href="?c=Roles&a=createRol">Registrar Rol</a>
       </div>
       <div>
-        <a href="?c=Users&a=readRoles">Consultar Roles</a>
+        <a href="?c=Roles&a=readRoles">Consultar Roles</a>
       </div>
     </div>
     <div>    

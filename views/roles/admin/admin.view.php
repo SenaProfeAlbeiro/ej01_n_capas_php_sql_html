@@ -6,8 +6,11 @@
   <title>Panel de Control</title>
 </head>
 <body>
-  <h1>Panel de Control</h1>
-  <a href="?c=Logout">Cerrar Sesión</a>
+  <div>
+    <h1>Panel de Control</h1>
+    <a href="?c=Logout">Cerrar Sesión</a>
+  </div>
+  <hr>
   <div>    
     <div>
       <h3>Roles</h3>
@@ -26,7 +29,16 @@
       <div>
         <a href="?c=Users&a=readUsers">Consultar Usuarios</a>
       </div>
-    </div>
+    </div>    
   </div>
+  <hr>
+  <div>    
+    <h2>Contenido</h2>
+  </div>
+  <hr>
+  <div>
+    <h5>Realizado por: Albeiro Ramos, 2025.</h5>
+  </div>
+  <hr>
 </body>
 </html>

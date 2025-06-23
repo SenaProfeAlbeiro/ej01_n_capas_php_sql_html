@@ -76,7 +76,7 @@
         </select>
       </div>
       <div>
-        <a href="?c=Dashboard">Cancelar</a>
+        <a href="?c=Users&a=readUsers">Cancelar</a>
         <input type="submit" value="Enviar">
       </div>
     </form>

@@ -37,14 +37,14 @@
     <h2>Actualizar Rol</h2>
     <form action="" method="POST">
       <div>    
-        <input type="hidden" name="rol_code" value="1">
+        <input type="hidden" name="rol_code" value="<?php echo $rol->getRolCode() ?>">
       </div>
       <div>
         <label for="">Nombre</label>
-        <input type="text" name="rol_name">
+        <input type="text" name="rol_name" value="<?php echo $rol->getRolName() ?>">
       </div>
       <div>
-        <a href="?c=Dashboard">Cancelar</a>
+        <a href="?c=Roles&a=readRoles">Cancelar</a>
         <input type="submit" value="Actualizar">
       </div>
     </form>

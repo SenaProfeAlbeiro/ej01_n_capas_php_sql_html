@@ -44,14 +44,16 @@
         <th>ACCIONES</th>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>admin</td>
-          <td>
-            <a href="?c=Roles&a=updateRol&idRol=1">Actualizar</a>
-            <a href="?c=Roles&a=deleteRol&idRol=1">Eliminar</a>
-          </td>
-        </tr>
+        <?php foreach ($roles as $rol) : ?>
+          <tr>
+            <td><?php echo $rol->getRolCode(); ?></td>
+            <td><?php echo $rol->getRolName(); ?></td>
+            <td>
+              <a href="?c=Roles&a=updateRol&idRol=<?php echo $rol->getRolCode(); ?>">Actualizar</a>
+              <a href="?c=Roles&a=deleteRol&idRol=<?php echo $rol->getRolCode(); ?>">Eliminar</a>
+            </td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>

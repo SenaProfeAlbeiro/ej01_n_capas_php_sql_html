@@ -41,7 +41,7 @@
         <input type="text" name="rol_name">
       </div>
       <div>
-        <a href="?c=Dashboard">Cancelar</a>
+        <a href="?c=Roles&a=readRoles">Cancelar</a>
         <input type="submit" value="Enviar">
       </div>
     </form>

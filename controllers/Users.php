@@ -24,7 +24,7 @@
       require_once "views/modules/users/user_read.view.php";
     }    
     public function updateUser(){
-      if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+      if ($_SERVER['REQUEST_METHOD'] == 'GET') {       
         require_once "views/modules/users/user_update.view.php";
       }
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {

@@ -25,7 +25,7 @@
       $this->userPass = $userPass;
     }
     public function __construct8($rolCode, $userCode, $userName, $userLastname, $userId, $userEmail, $userPass, $userState){
-      $this->rolCode = $rolCode;
+      $this->userCode = $rolCode;
       $this->userCode = $userCode;
       $this->userName = $userName;
       $this->userLastname = $userLastname;
@@ -34,11 +34,11 @@
       $this->userPass = $userPass;
       $this->userState = $userState;
     }    
-    public function setRolCode($rolCode){
-      $this->rolCode = $rolCode;
+    public function setRolCode($userCode){
+      $this->userCode = $userCode;
     }
     public function getRolCode(){
-      return $this->rolCode;
+      return $this->userCode;
     }    
     public function setUserCode($userCode){
       $this->userCode = $userCode;
@@ -81,6 +81,83 @@
     }
     public function getUserState(){
       return $this->userState;
+    }
+    public function userCreate(){
+      try {
+        $sql = 'INSERT INTO USERS VALUES (
+                  :rolCode,
+                  :userCode,
+                  :userName,
+                  :userLastname,
+                  :userId,
+                  :userEmail,
+                  :userPass,
+                  :userState
+                )';
+        $stmt = $this->dbh->prepare($sql);
+        $stmt->bindValue('userCode', $this->getuserCode());
+        $stmt->bindValue('userName', $this->getuserName());
+        $stmt->execute();
+      } catch (Exception $e) {
+        die($e->getMessage());
+      }
+    }
+    public function userRead(){
+      try {
+        $userList = [];
+        $sql = 'SELECT * FROM userES';
+        $stmt = $this->dbh->query($sql);
+        foreach ($stmt->fetchAll() as $user) {
+          $userObj = new user(
+            $user['user_codigo'],
+            $user['user_nombre']
+          );          
+          array_push($userList, $userObj);
+        }
+        return $userList;
+      } catch (Exception $e) {
+        die($e->getMessage());
+      }
+    }
+    public function getuserById($userCode) {
+      try {
+        $sql = "SELECT * FROM userES WHERE user_codigo=:userCode";
+        $stmt = $this->dbh->prepare($sql);
+        $stmt->bindValue('userCode', $userCode);
+        $stmt->execute();
+        $userDb = $stmt->fetch();
+        $userObj = new user(
+          $userDb['user_codigo'],
+          $userDb['user_nombre']
+        );
+        return $userObj;
+      } catch (Exception $e) {
+        die($e->getMessage());
+      }
+    }
+    public function userUpdate(){
+      try {
+        $sql = 'UPDATE userES SET
+                  user_codigo = :userCode,
+                  user_nombre = :userName
+                WHERE user_codigo = :userCode';
+        $stmt = $this->dbh->prepare($sql);
+        $stmt->bindValue('userCode', $this->getuserCode());
+        $stmt->bindValue('userName', $this->getuserName());
+        $stmt->execute();
+      } catch (Exception $e) {
+        die($e->getMessage());
+      }
+    }
+    public function userDelete($userCode){
+      try {
+        $sql = 'DELETE FROM userES WHERE user_codigo = :userCode';
+        $stmt = $this->dbh->prepare($sql);
+        $stmt->bindValue('userCode', $userCode);
+        $stmt->execute();
+      } catch (Exception $e) {
+        die($e->getMessage());
+      }
     }
   }
 ?>

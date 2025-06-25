@@ -17,7 +17,8 @@
           $_POST['user_pass'],
           $_POST['user_state']
         );
-        print_r($user);
+        $user->userCreate();
+        header("Location:?c=Users&a=readUsers");
       }
     }    
     public function readUsers(){

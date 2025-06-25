@@ -95,7 +95,13 @@
                   :userState
                 )';
         $stmt = $this->dbh->prepare($sql);
-        $stmt->bindValue('userCode', $this->getuserCode());
+        $stmt->bindValue('rolCode', $this->getuserCode());
+        $stmt->bindValue('userCode', $this->getuserName());
+        $stmt->bindValue('userName', $this->getuserName());
+        $stmt->bindValue('userName', $this->getuserName());
+        $stmt->bindValue('userName', $this->getuserName());
+        $stmt->bindValue('userName', $this->getuserName());
+        $stmt->bindValue('userName', $this->getuserName());
         $stmt->bindValue('userName', $this->getuserName());
         $stmt->execute();
       } catch (Exception $e) {

@@ -22,6 +22,8 @@
       }
     }    
     public function readUsers(){
+      $users = new User();
+      $users = $users->userRead();
       require_once "views/modules/users/user_read.view.php";
     }    
     public function updateUser(){

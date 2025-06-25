@@ -112,12 +112,18 @@
     public function userRead(){
       try {
         $userList = [];
-        $sql = 'SELECT * FROM userES';
+        $sql = 'SELECT * FROM USUARIOS';
         $stmt = $this->dbh->query($sql);
         foreach ($stmt->fetchAll() as $user) {
           $userObj = new user(
-            $user['user_codigo'],
-            $user['user_nombre']
+            $user['rol_codigo'],
+            $user['usuario_codigo'],
+            $user['usuario_nombres'],
+            $user['usuario_apellidos'],
+            $user['usuario_identificador'],
+            $user['usuario_email'],
+            $user['usuario_pass'],
+            $user['usuario_estado']
           );          
           array_push($userList, $userObj);
         }
